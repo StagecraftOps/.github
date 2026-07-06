@@ -35,7 +35,7 @@ Instead of viewing workflows as isolated YAML files, StageCraft models the entir
 
 <p align="center">
 
-<img src="docs/images/stagecraft-architecture.png" width="100%">
+<img src="docs/images/stagecraft flow diagram.jpeg" width="100%">
 
 </p>
 
