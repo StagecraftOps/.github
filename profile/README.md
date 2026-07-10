@@ -1,363 +1,75 @@
-<div align="center">
-
 # StageCraft
 
-### AI-Powered CI/CD Intelligence Platform
-
-Transform GitHub Actions, application code, infrastructure, governance policies, and runtime telemetry into an intelligent Knowledge Graph that delivers pipeline visibility, optimization, governance, compliance, and AI-powered DevOps insights.
-
-<p>
-  <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python">
-  <img src="https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi">
-  <img src="https://img.shields.io/badge/Neo4j-Knowledge%20Graph-4581C3?logo=neo4j">
-  <img src="https://img.shields.io/badge/Next.js-Dashboard-black?logo=next.js">
-  <img src="https://img.shields.io/badge/GitHub-Actions-2088FF?logo=githubactions">
-  <img src="https://img.shields.io/badge/Kubernetes-Orchestration-326CE5?logo=kubernetes">
-</p>
-
-</div>
-
----
-
-# 🚀 What is StageCraft?
-
-Modern software organizations manage hundreds of services, thousands of workflow executions, infrastructure resources, governance policies, and deployment pipelines. While CI/CD platforms automate delivery, they provide limited visibility into how everything connects.
-
-**StageCraft** transforms engineering data into a centralized **Knowledge Graph**, enabling teams to understand their software delivery ecosystem through intelligent visualization, dependency analysis, governance validation, optimization recommendations, and AI-assisted operational insights.
-
-Instead of viewing workflows as isolated YAML files, StageCraft models the entire engineering ecosystem as a connected graph.
-
----
-
-# 🏗 Platform Architecture
-
-> The following architecture illustrates the complete StageCraft platform.
-
-<p align="center">
-
-<img src="docs/images/stagecraft flow diagram.jpeg" width="100%">
-
-</p>
-
----
-
-# ⚙️ How StageCraft Works
-
-The platform is organized into seven major layers.
-
-## 1️⃣ Data Sources
-
-StageCraft continuously collects engineering data from multiple sources.
-
-- GitHub Actions
-- Application Source Code
-- Infrastructure as Code
-- Governance Policies
-- Runtime Telemetry
-- Logs & Metrics
-
-↓
-
-## 2️⃣ Ingestion & Parsing
-
-The ingestion engine:
-
-- Fetches repositories
-- Parses workflow YAML
-- Extracts jobs and dependencies
-- Discovers relationships
-- Normalizes metadata
-- Validates data
-
-↓
-
-## 3️⃣ Knowledge Graph
-
-All collected information is transformed into a centralized **Neo4j Knowledge Graph**.
-
-### Core Nodes
-
-- Workflow
-- Workflow Run
-- Job
-- Service
-- Code Artifact
-- Infrastructure Resource
-- Governance Policy
-
-### Relationships
-
-- HAS_JOB
-- HAS_RUN
-- USES
-- DEPENDS_ON
-- IMPLEMENTS
-- GOVERNS
-- CALLS
-- ACCESSES
-
-This graph becomes the **single source of truth** powering every StageCraft capability.
-
-↓
-
-## 4️⃣ Intelligence Services
-
-Specialized analysis engines continuously evaluate the graph.
-
-### Dependency Intelligence
-
-- Workflow DAG
-- Service Dependencies
-- Impact Analysis
-- Execution Chains
-
-### Performance Intelligence
-
-- Critical Path
-- Bottleneck Detection
-- Runtime Analytics
-- Parallelization Opportunities
-
-### Failure Intelligence
-
-- Root Cause Analysis
-- Failure Clustering
-- Similar Failure Detection
-- Impact Analysis
-
-### Governance
-
-- Policy Validation
-- Compliance Checks
-- Audit Reports
-- Security Recommendations
-
-### Code Intelligence
-
-- API Graph
-- Package Dependencies
-- Service Coupling
-- Technical Health
-
-↓
-
-## 5️⃣ Visualization Layer
-
-StageCraft provides multiple levels of visualization.
-
-### Pipeline Catalog
-
-Search and explore every workflow.
-
-### Template Map
-
-Discover reusable workflow templates.
-
-### Service Chain
-
-Visualize complete service execution flow.
-
-### Job DAG
-
-Inspect workflow execution dependencies.
-
-### Governance Dashboard
-
-Review policy compliance and violations.
-
-### Analytics Dashboard
-
-Monitor DORA metrics, reliability, runtime trends, and optimization insights.
-
-↓
-
-## 6️⃣ Background Analytics
-
-Background workers continuously compute:
-
-- Graph Synchronization
-- Runtime Metrics
-- Critical Paths
-- Pattern Detection
-- Optimization Recommendations
-- Redis Caching
-
-↓
-
-## 7️⃣ Business Value
-
-StageCraft enables engineering organizations to achieve:
-
-- 🚀 Faster Pipelines
-- ✅ Higher Reliability
-- 🛡 Stronger Governance
-- 👁 Better Visibility
-- 💰 Reduced Engineering Cost
-
----
-
-# 📦 Organization Repositories
-
-The StageCraft platform is built as a collection of modular repositories.
-
-| Repository | Description |
-|------------|-------------|
-| **pace-stagecraft-monorepo** | Enterprise-scale sample monorepo containing hundreds of services and GitHub Actions workflows |
-| **stagecraft-api** | FastAPI backend exposing graph APIs, analytics, and intelligence services |
-| **stagecraft-worker** | Celery workers responsible for ingestion, graph synchronization, and background analytics |
-| **stagecraft-frontend** | Next.js dashboard providing visualizations and interactive reports |
-| **stagecraft-webhook** | GitHub App webhook receiver for real-time repository events |
-| **stagecraft-mcp** | Model Context Protocol server providing GitHub tooling for AI agents |
-| **stagecraft-infra** | Terraform infrastructure provisioning |
-| **stagecraft-helm** | Helm charts for Kubernetes deployment |
-
----
-
-# ✨ Platform Capabilities
-
-## Dependency Intelligence
-
-- Workflow DAG visualization
-- Service dependency mapping
-- Impact analysis
-- Execution graph exploration
-
----
-
-## Runtime Intelligence
-
-- Critical path detection
-- Build duration analysis
-- Workflow performance metrics
-- Parallelization recommendations
-
----
-
-## Governance & Compliance
-
-- Policy validation
-- Compliance analysis
-- Security recommendations
-- Audit reporting
-
----
-
-## AI-Powered Insights
-
-- Root Cause Analysis (RCA)
-- Pipeline optimization
-- Intelligent recommendations
-- Failure clustering
-
----
-
-## Analytics
-
-- DORA Metrics
-- Reliability reports
-- Runtime trends
-- Engineering insights
-
----
-
-# 🛠 Technology Stack
-
-## Backend
-
-- Python
-- FastAPI
-
-## Frontend
-
-- Next.js
-- React
-- React Flow
-
-## Graph Database
-
-- Neo4j
-
-## Background Processing
-
-- Celery
-- Redis
-
-## Infrastructure
-
-- Docker
-- Kubernetes
-- Helm
-- Terraform
-
-## CI/CD
-
-- GitHub Actions
-
----
-
-# 🔄 Platform Workflow
-
-```text
-Developer Push / Pull Request
-            │
-            ▼
-     GitHub Actions CI/CD
-            │
-            ▼
- GitHub Webhook Receiver
-            │
-            ▼
-  StageCraft Ingestion Engine
-            │
-            ▼
-     Neo4j Knowledge Graph
-            │
-            ▼
-    Intelligence Services
-            │
-    ┌───────┴────────┐
-    ▼                ▼
-REST APIs      MCP Server
-    │
-    ▼
-Next.js Dashboard
+**AI-powered CI/CD intelligence and optimization platform.**
+
+StageCraft watches your GitHub Actions pipelines and does more than tell you something broke. It builds a dependency graph of your workflows, tracks runtime performance and standardization drift, checks governance/compliance posture, finds and root-causes vulnerabilities, and runs a fleet of Bedrock/Claude-backed agents that raise real pull requests — fixing failed runs, remediating dependency vulnerabilities, optimizing slow workflows, and reviewing every PR — instead of just surfacing a dashboard.
+
+## What it does
+
+| Area | Capability |
+|---|---|
+| **Dependency graph** | Parses workflow YAML (including composite actions, reusable workflow calls, matrix/dispatch fan-out) into a graph across an entire repo or org. |
+| **Runtime monitoring** | Deterministic critical-path analysis over real job/step timings — no AI needed to know what's slow. |
+| **Standardization** | Diffs workflows against shared templates and clusters recurring patterns to flag drift. |
+| **Governance & Compliance** | A Compliance agent checks runs against framework controls (HIPAA/PCI/SOC2); a Governance agent compares behavior against your own uploaded policy docs (pgvector retrieval). |
+| **Performance optimization** | Detects bottlenecks and parallelization opportunities, drafts a rewritten workflow, simulates the time saved, and opens a PR on accept. |
+| **Vulnerability RCA** *(System agent)* | Trivy/Sonar findings get root-caused, scored against blast radius, and tracked as a GitHub issue. |
+| **Vulnerability Remediation** *(Custom agent)* | A publishable Claude Code Action agent that fixes a single finding or a whole repo's findings in dependency order, verified against real npm/PyPI registries. |
+| **PR Traces** | A peer-review agent runs on every pull request automatically. |
+| **Failure remediation** | Classify → root cause → generate a fix → security-review the fix → PR, all in one agent chain. |
+| **Knowledge graph** | Cross-links governance findings, remediation history, and optimization recommendations into one browsable graph. |
+| **Pipeline Chat** | Natural-language questions answered over your own pipeline data. |
+| **Applications** | Group repos into isolated applications; every page scopes to one application or "all," with no cross-application leakage. |
+
+Agents come in two flavors, shown as two selectable cards in **Agent Fleet**: **System agents** run inside StageCraft itself (Vulnerability RCA, Compliance, Governance, Optimization); **Custom agents** are published as a GitHub Actions workflow into the target repo and dispatched on demand (Vulnerability Remediation, Failure Remediation), so the actual fix work happens as a real, auditable `claude-code-action` run in the repo's own Actions tab.
+
+## Architecture
+
+```
+GitHub Actions run / code scanning alert
+  → stagecraft-webhook   (verify HMAC signature, publish to SQS)
+  → stagecraft-worker    (SQS consumer → Celery: classify → root cause →
+                           draft fix → security review → write PR text)
+       └─ stagecraft-mcp  (GitHub tools: read workflow YAML/logs, commit,
+                           open PRs — structured tool access for the agents)
+  → AWS Bedrock (Claude)  (root cause, fix generation, RCA narration, chat)
+  → PR / GitHub issue opened on the source repo
+  ↕
+stagecraft-api      (FastAPI: auth, org/application data, all read/query
+                     endpoints, WebSocket live updates)
+  ↕
+stagecraft-frontend (dashboard — every page above lives here)
 ```
 
----
+Custom agents take a second path: the frontend dispatches a `workflow_dispatch` directly against the target repo's own `stagecraft-remediation-agent.yml` (installed there by "Publish to repo"), which runs `anthropics/claude-code-action` in that repo's own Actions — StageCraft just tracks the resulting run.
 
-# 🗺 Roadmap
+## Repositories in this workspace
 
-### Phase 1
+| Directory | Role | Stack | Port |
+|---|---|---|---|
+| [`stagecraft-api`](stagecraft-api) | Backend API — OAuth, orgs/applications, workflows/runs, remediations, vulnerabilities, optimization, insights, WebSocket relay | FastAPI + async SQLAlchemy, Alembic | 8000 |
+| [`stagecraft-frontend`](stagecraft-frontend) | Dashboard — every page in the table above | Angular 18 (standalone, signals), served by nginx.¹ | 3000 |
+| [`stagecraft-worker`](stagecraft-worker) | Async analysis — Celery worker + a separate SQS→Celery consumer bridge; the LangGraph agent chains that call Bedrock | Celery + sync SQLAlchemy | — |
+| [`stagecraft-webhook`](stagecraft-webhook) | GitHub webhook receiver — signature verification, publishes to SQS. Kept separate so it stays up regardless of API load. | FastAPI | 8001 |
+| [`stagecraft-mcp`](stagecraft-mcp) | MCP server exposing GitHub tools (read workflow YAML/logs, commit, open PRs) to the worker's agents | FastMCP | 8010 |
+| [`stagecraft-helm`](stagecraft-helm) | Helm charts for all five services above, plus the shared secrets/ingress plumbing | Helm (library chart + umbrella) | — |
+| [`stagecraft-infra`](stagecraft-infra) | AWS infrastructure: VPC, EKS, RDS (pgvector), ElastiCache, SQS, IRSA, Secrets Manager | Terraform (2-stage) | — |
+| [`pace-stagecraft-monorepo`](pace-stagecraft-monorepo) | **Not a platform service.** A synthetic ~360-service fixture repo used purely as an analysis target to exercise the dependency-graph/standardization/governance features against something realistically large. | — | — |
 
-- Knowledge Graph Generation
-- Dependency Visualization
-- Runtime Analytics
-- Governance Dashboard
+¹ `stagecraft-frontend`'s repo root still carries an earlier Next.js scaffold; what actually builds and ships is `angular-app/` (see its `Dockerfile`) — treat the Angular app as the current frontend.
 
-### Phase 2
+`stagecraft-mcp` is called in-cluster over SSE by the worker's agents and isn't needed for most frontend/API work.
 
-- Optimization Engine
-- AI Root Cause Analysis
-- Recommendation Engine
-- Pipeline Simulation
+## Deployment
 
-### Phase 3
+```
+stagecraft-infra (Terraform, 2 stages)  →  EKS cluster, RDS, ElastiCache, SQS, Secrets Manager
+        ↓
+stagecraft-helm (helm install)          →  all 5 services on EKS, secrets synced via
+                                            External Secrets Operator, one shared ALB
+```
 
-- Multi-CI Platform Support
-- Autonomous AI Agents
-- Predictive Failure Detection
-- Enterprise Multi-Tenancy
-- Cost Optimization
-- Real-Time Event Streaming
+Stage 1 of `stagecraft-infra` provisions pure AWS resources; stage 2 needs the live cluster to install the AWS Load Balancer Controller and External Secrets Operator. See each repo's own README for the exact commands and ordering — they're deliberately sequenced and not safely reorderable.
 
----
+## Status
 
-
-
-<div align="center">
-
-### Build Intelligent CI/CD Systems with StageCraft
-
-**Knowledge Graphs • DevOps Intelligence • AI-Powered Engineering**
-
-</div>
